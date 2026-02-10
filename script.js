@@ -56,5 +56,14 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+// Mobile menu toggle
+const menuBtn = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".navlinks");
+
+if(menuBtn){
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+}
 
 });

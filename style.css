@@ -290,3 +290,38 @@ footer {
   }
 
 }
+/* ===== MOBILE MENU ===== */
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navlinks {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .navlinks a {
+    padding: 12px 20px;
+    display: block;
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+}
