@@ -194,22 +194,7 @@ footer {
   background: #1f1f1f;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-  nav {
-    padding: 14px 5%;
-  }
-
-  .navlinks a {
-    margin-left: 12px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-}
-/* ===== BRAND LOGO TEXT ===== */
+/* ================= BRAND ================= */
 
 .brand {
   display: flex;
@@ -218,17 +203,25 @@ footer {
 }
 
 .brand img {
-  height: 46px;   /* adjust if needed */
+  height: 46px;
   width: auto;
 }
 
 .brand span {
-  font-size: 26px;     /* bigger text */
+  font-size: 26px;
   font-weight: 600;
-  color: #000000;      /* pure black */
-  white-space: nowrap; /* force single line */
+  color: #000;
+  white-space: nowrap;
 }
-/* ===== Scroll Reveal Animation ===== */
+
+/* ================= NAV FIX ================= */
+
+.navlinks {
+  display: flex;
+  align-items: center;
+}
+
+/* ================= SCROLL REVEAL ================= */
 
 .reveal {
   opacity: 0;
@@ -240,24 +233,56 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-/* ================= MOBILE FIXES ================= */
+
+/* ================= MOBILE MENU + RESPONSIVE ================= */
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 3000;
+}
 
 @media (max-width: 768px) {
 
   nav {
     padding: 12px 5%;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .brand span {
-    font-size: 18px;   /* smaller text on mobile */
+    font-size: 18px;
   }
 
   .brand img {
-    height: 36px;      /* smaller logo */
+    height: 36px;
   }
 
   .navlinks {
-    display: none;     /* hide links on mobile */
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+    flex-direction: column;
+    padding: 15px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 2500;
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+
+  .navlinks a {
+    padding: 12px 20px;
+    display: block;
+    margin: 0;
   }
 
   .hero {
@@ -277,7 +302,7 @@ footer {
   }
 
   .grid {
-    grid-template-columns: 1fr; /* ONE card per row */
+    grid-template-columns: 1fr;
   }
 
   .card img {
@@ -287,41 +312,5 @@ footer {
   footer {
     font-size: 13px;
     padding: 20px 5%;
-  }
-
-}
-/* ===== MOBILE MENU ===== */
-
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navlinks {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: white;
-    display: none;
-    flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  }
-
-  .navlinks a {
-    padding: 12px 20px;
-    display: block;
-  }
-
-  .navlinks.open {
-    display: flex;
   }
 }
