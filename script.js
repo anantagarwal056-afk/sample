@@ -3,12 +3,19 @@ document.addEventListener('DOMContentLoaded',function(){
 
   // 1) IntersectionObserver for reveal animations
   const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('show') ; obs.unobserve(e.target) }
-    })
-  },{threshold:0.12});
+  entries.forEach(e=>{
+    if (e.isIntersecting) {
+      e.target.classList.add('show');
+      obs.unobserve(e.target);
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: "0px 0px -80px 0px"
+});
 
-  document.querySelectorAll('.reveal').forEach(el=> obs.observe(el));
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
 
   // 2) Active nav link by current location
   const navLinks = document.querySelectorAll('nav a');
@@ -40,5 +47,14 @@ document.addEventListener('DOMContentLoaded',function(){
       window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
     });
   }
+// Fallback in case IntersectionObserver misses elements
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal:not(.show)").forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
 
 });
