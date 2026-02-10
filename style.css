@@ -209,3 +209,22 @@ footer {
     font-size: 32px;
   }
 }
+/* ===== BRAND LOGO TEXT ===== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand img {
+  height: 46px;   /* adjust if needed */
+  width: auto;
+}
+
+.brand span {
+  font-size: 26px;     /* bigger text */
+  font-weight: 600;
+  color: #000000;      /* pure black */
+  white-space: nowrap; /* force single line */
+}
