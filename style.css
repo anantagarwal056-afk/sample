@@ -240,3 +240,53 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* ================= MOBILE FIXES ================= */
+
+@media (max-width: 768px) {
+
+  nav {
+    padding: 12px 5%;
+  }
+
+  .brand span {
+    font-size: 18px;   /* smaller text on mobile */
+  }
+
+  .brand img {
+    height: 36px;      /* smaller logo */
+  }
+
+  .navlinks {
+    display: none;     /* hide links on mobile */
+  }
+
+  .hero {
+    padding: 50px 5%;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 45px 5%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* ONE card per row */
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 20px 5%;
+  }
+
+}
