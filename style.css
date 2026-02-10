@@ -228,3 +228,15 @@ footer {
   color: #000000;      /* pure black */
   white-space: nowrap; /* force single line */
 }
+/* ===== Scroll Reveal Animation ===== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
