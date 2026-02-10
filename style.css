@@ -1,100 +1,178 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* style.css - beige / kraft premium theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap');
 
+:root{
+  --kraft-1:#f6e7cf;
+  --kraft-2:#ecd7b7;
+  --kraft-3:#d9b98b;
+  --accent:#b07a38;
+  --deep:#1f1f1f;
+  --muted:#7a6b5a;
+  --white:#ffffff;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-margin:0;
-font-family:Poppins,sans-serif;
-background:#f6e7cf;
+  margin:0;
+  font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,var(--kraft-1),#f5e8d4 60%);
+  color:var(--deep);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
 }
 
+/* NAV */
 nav{
-background:white;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:999;
-}
-
-nav a{
-text-decoration:none;
-color:#222;
-margin:0 15px;
-font-weight:500;
+  background:rgba(255,255,255,0.96);
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 6px 18px rgba(20,20,20,0.06);
+  backdrop-filter: blur(4px);
 }
 
 .logo{
-font-weight:600;
-font-size:20px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  font-family:"Playfair Display",serif;
+  color:var(--deep);
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.4px;
 }
 
+.logo .mark{
+  width:42px;height:42px;border-radius:6px;
+  background:linear-gradient(180deg,#caa77a,#a8793a);
+  display:flex;align-items:center;justify-content:center;color:var(--white);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  font-weight:700;
+}
+
+.navlinks{display:flex;gap:18px;align-items:center}
+.navlinks a{
+  color:var(--deep);
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 12px;
+  border-radius:6px;
+  transition:all .22s ease;
+}
+.navlinks a:hover{background:var(--kraft-2); transform:translateY(-2px);}
+.navlinks a.active{color:var(--accent)}
+
+/* HERO */
 .hero{
-padding:80px 8%;
-background:#f3dcc0;
+  padding:70px 6% 32px 6%;
+  background-image: url('https://source.unsplash.com/1600x900/?kraft,boxes,packaging');
+  background-size:cover;
+  background-position:center;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  color: #111;
+  position:relative;
 }
-
-section{
-padding:60px 8%;
+.hero .overlay{
+  background:linear-gradient(180deg, rgba(246,231,207,0.85), rgba(246,231,207,0.9));
+  padding:50px 3%;
+  border-radius:8px;
+  display:flex;
+  gap:30px;
+  align-items:center;
 }
+.hero h1{
+  font-family:"Playfair Display", serif;
+  font-size:36px;margin:0 0 8px 0;
+  color:var(--deep);
+}
+.hero p{margin:0;color:var(--muted);font-size:15px;max-width:50ch}
 
+/* CONTENT SECTIONS */
+section{padding:60px 6%;}
+.section-title{
+  display:flex;align-items:center;gap:12px;margin-bottom:22px;
+}
+.section-title h2{
+  margin:0;
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+  letter-spacing:0.2px;
+  color:var(--deep);
+}
+.section-sub{color:var(--muted);font-size:14px;margin-top:6px}
+
+/* GRID CARDS */
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
 }
-
 .card{
-background:white;
-padding:15px;
-border-radius:6px;
+  background:var(--white);
+  border-radius:8px;
+  padding:12px;
+  box-shadow:0 6px 20px rgba(27,20,10,0.04);
+  transition:transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(25,15,8,0.08)}
+.card img{width:100%;height:170px;object-fit:cover;border-radius:6px}
+.card h3{margin:12px 0 6px 0;font-size:16px;color:var(--deep)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+/* PRODUCT DETAIL */
+.product-grid{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:start}
+@media (max-width:900px){ .product-grid{grid-template-columns:1fr} }
+
+/* CLIENTS */
+.clients-logos{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.client-logo{
+  background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.95));
+  padding:12px;border-radius:8px;min-width:140px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(20,20,20,0.04);
 }
 
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:5px;
+/* CONTACT */
+.contact-card{background:var(--white);padding:18px;border-radius:8px;box-shadow:0 10px 30px rgba(20,20,20,0.04)}
+input,textarea,button{font-family:inherit}
+input,textarea{border:1px solid rgba(0,0,0,0.08);padding:12px;border-radius:6px;outline:none}
+input:focus,textarea:focus{box-shadow:0 6px 20px rgba(160,120,70,0.08);border-color:var(--accent)}
+button{
+  background:var(--accent);color:var(--white);border:none;padding:12px 18px;border-radius:8px;font-weight:600;
+  cursor:pointer;transition:transform .18s ease;
+}
+button:hover{transform:translateY(-3px)}
+
+/* FOOTER */
+footer{background:#111; color: #fff; padding:28px 6%; text-align:center; margin-top:40px; font-size:14px}
+
+/* FLOATING CONTACTS */
+.float-wrap{position:fixed;right:22px;bottom:22px;display:flex;flex-direction:column;gap:12px;z-index:1000}
+.float-btn{
+  width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 30px rgba(18,18,18,0.12);text-decoration:none;color:white;font-size:22px;
+}
+.float-whatsapp{background:#25D366}
+.float-call{background:#111}
+
+/* subtle reveal animations */
+.reveal{opacity:0;transform:translateY(12px);transition: all .7s cubic-bezier(.2,.9,.2,1)}
+.reveal.show{opacity:1;transform:none}
+
+/* small screens */
+@media (max-width:720px){
+  .navlinks{display:none}
+  .hero .overlay{padding:28px 6%}
+  .logo{font-size:18px}
 }
 
-footer{
-background:#1b1b1b;
-color:white;
-text-align:center;
-padding:25px;
-}
-
-/* floating buttons */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:14px;
-border-radius:50%;
-text-decoration:none;
-font-size:22px;
-}
-
-.call{
-position:fixed;
-bottom:20px;
-left:20px;
-background:black;
-color:white;
-padding:14px;
-border-radius:50%;
-text-decoration:none;
-font-size:20px;
-}
-
-input,textarea{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-border:1px solid #ccc;
-}
 
 
