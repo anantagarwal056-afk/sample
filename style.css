@@ -1,85 +1,100 @@
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#f6e7cf;
 }
 
-nav {
-  background:#0d1b2a;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+nav{
+background:white;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
 }
 
-nav a {
-  color:white;
-  text-decoration:none;
-  margin:0 15px;
+nav a{
+text-decoration:none;
+color:#222;
+margin:0 15px;
+font-weight:500;
 }
 
-.hero {
-  background:#e9ecef;
-  padding:80px 20px;
-  text-align:center;
+.logo{
+font-weight:600;
+font-size:20px;
 }
 
-section {
-  padding:50px 10%;
+.hero{
+padding:80px 8%;
+background:#f3dcc0;
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+section{
+padding:60px 8%;
 }
 
-.card {
-  border:1px solid #ddd;
-  padding:15px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
-.card img {
-  width:100%;
-  height:180px;
-  object-fit:cover;
+.card{
+background:white;
+padding:15px;
+border-radius:6px;
 }
 
-footer {
-  background:#0d1b2a;
-  color:white;
-  text-align:center;
-  padding:20px;
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:5px;
 }
 
-/* WhatsApp */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:12px 15px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:22px;
+footer{
+background:#1b1b1b;
+color:white;
+text-align:center;
+padding:25px;
 }
 
-/* Call */
-.call {
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:black;
-  color:white;
-  padding:12px 15px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:20px;
+/* floating buttons */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px;
+border-radius:50%;
+text-decoration:none;
+font-size:22px;
 }
 
-input,textarea {
-  width:100%;
-  padding:10px;
-  margin-bottom:10px;
+.call{
+position:fixed;
+bottom:20px;
+left:20px;
+background:black;
+color:white;
+padding:14px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px;
 }
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border:1px solid #ccc;
+}
+
 
