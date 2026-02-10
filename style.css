@@ -173,22 +173,3 @@ footer{background:#111; color: #fff; padding:28px 6%; text-align:center; margin-
   .hero .overlay{padding:28px 6%}
   .logo{font-size:18px}
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;                 /* space between logo + text */
-}
-
-.logo {
-  height: 28px;            /* SMALL logo */
-  width: auto;
-}
-
-.brand-text {
-  font-size: 20px;
-  font-weight: 600;
-  color: #000000;         /* pure black */
-  white-space: nowrap;   /* stays on one line */
-  font-family: 'Inter', 'Poppins', Arial, sans-serif;
-}
-
