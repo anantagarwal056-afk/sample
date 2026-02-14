@@ -314,3 +314,24 @@ footer {
     padding: 20px 5%;
   }
 }
+.clients-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 24px;
+  padding: 10px;
+}
+
+.client-logo img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.client-logo:hover img {
+  transform: scale(1.05);
+}
