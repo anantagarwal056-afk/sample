@@ -325,12 +325,15 @@ footer {
 }
 
 .client-logo img {
-  width: 100%;
-  max-width: 220px;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 100px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
 }
+
 
 .client-logo:hover img {
   transform: scale(1.05);
